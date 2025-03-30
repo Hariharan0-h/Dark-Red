@@ -398,15 +398,20 @@ select option {
 
 .tab-content {
     display: none;
-    padding: 10px 30px 20px;
+    padding: 20px 30px;
     background-color: #222222;
     overflow-y: auto;
     flex: 1;
 }
 
-.tab-content h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
+/* H3 headings in forms are now hidden */
+.form-container h3 {
+    display: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    visibility: hidden;
 }
 
 .tab-content.active {
@@ -419,26 +424,9 @@ select option {
     to { opacity: 1; transform: translateY(0); }
 }
 
-h3 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--accent-color);
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(231, 76, 60, 0.3);
-    padding-bottom: 8px;
-    font-size: 20px;
-    position: relative;
-}
-
-h3::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 80px;
-    height: 3px;
-    background-color: var(--accent-color);
+/* Form row spacing adjustment to compensate for removed h3 */
+.form-row:first-of-type {
+    margin-top: 10px;
 }
 
 .form-row {
@@ -789,7 +777,7 @@ button:disabled {
 }
 
 /* Add some glow effects for red accents */
-.btn-primary, .tab.active::after, h3::after, .luxury-divider::before {
+.btn-primary, .tab.active::after, .luxury-divider::before {
     box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
 }
 
