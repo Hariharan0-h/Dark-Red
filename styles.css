@@ -87,6 +87,17 @@ body {
 }
 
 .sidebar-bottom-icons {
+    margin-top: -15px;
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1001;
+}
+
+.sidebar-bottom-icons-static {
     margin-top: auto;
     padding-bottom: 20px;
     width: 100%;
@@ -164,8 +175,8 @@ body {
     flex-direction: column;
     height: 100vh;
     position: relative;
-    z-index: 10;
     background-color: #1a1a1a;
+    z-index: -1;
 }
 
 /* Header */
