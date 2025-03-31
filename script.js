@@ -78,28 +78,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Tab click functionality
+    // Improved Tab click functionality
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Log tab click for debugging
             console.log('Tab clicked:', tab.getAttribute('data-tab'));
             
+            // Get the tab content ID from the data-tab attribute
+            const tabContentId = tab.getAttribute('data-tab');
+            
+            // Check if we found a matching tab content element
+            const tabContent = document.getElementById(tabContentId);
+            if (!tabContent) {
+                console.error('Tab content not found:', tabContentId);
+                return;
+            }
+            
             // Remove active class from all tabs and tab contents
             tabs.forEach(t => t.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
             
-            // Add active class to current tab
+            // Add active class to current tab and content
             tab.classList.add('active');
+            tabContent.classList.add('active');
             
-            // Show the corresponding content
-            const tabContentId = tab.getAttribute('data-tab');
-            const tabContent = document.getElementById(tabContentId);
-            
-            if (tabContent) {
-                tabContent.classList.add('active');
-            } else {
-                console.error('Tab content not found:', tabContentId);
-            }
+            // Force a reflow/repaint to ensure visibility
+            void tabContent.offsetHeight;
         });
     });
     

@@ -175,8 +175,8 @@ body {
     flex-direction: column;
     height: 100vh;
     position: relative;
+    z-index: 10;
     background-color: #1a1a1a;
-    z-index: -1;
 }
 
 /* Header */
@@ -378,6 +378,21 @@ select option {
     align-items: center;
     gap: 6px;
     font-size: 14px;
+}
+
+.tab svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent-color);
+    margin-right: 6px;
+}
+
+.tab:hover svg {
+    fill: var(--accent-color);
+}
+
+.tab.active svg {
+    fill: var(--accent-color);
 }
 
 .tab i {
