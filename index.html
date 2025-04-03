@@ -81,7 +81,6 @@
             <div class="header">
                 <div class="logo">
                     <img src="AuroiTech_logo.png" alt="Aravind Eye Care Systems" class="header-logo">
-                    <span class="logo-text">Aravind Eye Care Systems</span>
                 </div>
                 <div class="user-info">
                     <svg class="user-icon" viewBox="0 0 24 24">
@@ -166,16 +165,17 @@
                             <div class="form-row">
                                 <div class="form-group" style="flex: 1">
                                     <label for="kin">Next of Kin</label>
-                                    <div class="kin-container" style="display: flex; gap: 10px;">
-                                        <select id="kin" class="form-control" style="width: 30%;">
+                                        <select id="kin" class="form-control">
                                             <option value="" disabled selected>Select</option>
                                             <option value="s/o">S/o</option>
                                             <option value="d/o">D/o</option>
                                             <option value="f/o">F/o</option>
                                             <option value="m/o">M/o</option>
                                         </select>
-                                        <input type="text" id="kinname" class="form-control" placeholder="Enter Name" style="width: 70%;">
-                                    </div>
+                                </div>
+                                <div class="form-group" style="flex: 1">
+                                    <label for="rel">Name of Relation</label>
+                                    <input type="text" id="kinname" class="form-control" placeholder="Enter Name">
                                 </div>
                                 <div class="form-group" style="flex: 1">
                                     <label for="gender">Gender</label>
